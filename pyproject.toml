@@ -1,0 +1,18 @@
+name = "ctfhelper"
+version = "0.1.0"
+description = "Lightweight CLI toolkit for CTFs (crypto, stego, forensics) by ƤȺIƝ"
+authors = [{ name = "PAIN-hub" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["ctf", "cli", "osint", "forensics", "stego"]
+
+[project.scripts]
+ctfhelper = "ctfhelper:main"
+
+[tool.setuptools]
+packages = ["ctfhelper"]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
