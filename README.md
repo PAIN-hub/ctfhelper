@@ -1,100 +1,91 @@
+
 # CTF Helper v1
 
-> Lightweight, fast, single-file CLI toolkit to speed up common CTF tasks — crypto, stego, forensics, and quick decoders.
+<div align="center">
 
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python 3.x](https://img.shields.io/badge/python-3.x-blue?logo=python)
+![Status: Active](https://img.shields.io/badge/status-active-brightgreen)
 
-## Why this repo?
+**Lightweight, fast, single-file CLI toolkit for rapid CTF flag extraction.**
 
-If you're grinding CTFs or just learning offensive security, you need a pocket toolkit that runs anywhere and gets you from puzzle → flag fast. ctfhelper is a single-file Python CLI that covers the essentials and is easy to extend.
+---
 
-## Features (v1)
+</div>
 
-#### ✅ Encodings: Base16/32/58/64/85 encode & decode
+## 🎯 Why this repo?
 
-#### ✅ Ciphers: Caesar (brute / shift), ROT13, ROT47
+If you're grinding CTFs or mastering offensive security, you need a high-performance, portable toolkit that goes from `puzzle` → `flag` in seconds. **CTF Helper** is designed for speed, minimal dependency overhead, and effortless extensibility.
 
-#### ✅ XOR: Single-byte xor decrypt + brute-force
+---
 
-#### ✅ Hash tools: Identify hash by length and dictionary crack (md5/sha1/sha256)
+## ⚡ Features (v1)
 
-#### ✅ Stego (lite): EXIF extractor, LSB text extraction for PNG/BMP
+| Category | Functionality |
+| :--- | :--- |
+| **Encodings** | Base16/32/58/64/85 encode & decode |
+| **Ciphers** | Caesar (shift/brute), ROT13, ROT47 |
+| **XOR** | Single-byte XOR decrypt & automated brute-force |
+| **Hashing** | Hash identification & dictionary attacks (MD5/SHA1/SHA256) |
+| **Stegano** | EXIF metadata extraction & LSB text carving (PNG/BMP) |
+| **Forensics** | String extraction & Magic-byte file identification |
+| **Utility** | Integrated hex viewer for file analysis |
 
-#### ✅ Forensics: strings-like extractor, file type detection (magic bytes)
+---
 
-#### ✅ Hex viewer: quick hexdump of any file
+## 🛠 Usage Examples
 
-
-### decode base64
-``` 
+**Decode Base64**
+```bash
 python3 ctfhelper.py base base64 decode --data "U29tZVRleHQ="
-```
 
-### brute caesar
 ```
+**Brute-force Caesar Cipher**
+```bash
 python3 ctfhelper.py caesar --text "uryyb" --brute
+
 ```
-### xor brute
-```
+**Brute-force XOR Key**
+```bash
 python3 ctfhelper.py xor --file secret.bin --brute
+
 ```
-### extract exif
-```
+**Extract EXIF Metadata**
+```bash
 python3 ctfhelper.py steg --exif image.jpg
+
 ```
+## 🚀 Quickstart
+ 1. **Clone the repository:**
+```bash
+   git clone [https://github.com/PAIN-hub/ctfhelper.git](https://github.com/PAIN-hub/ctfhelper.git)
+   cd ctfhelper
 
-## Quickstart
-
-#### 1. Clone repository:
 ```
-git clone https://github.com/PAIN-hub/ctfhelper.git
+ 2. **Environment Setup:**
+```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+
 ```
-#### 2. Redirect to folder:
+ 3. **Execution:**
+```bash
+   python3 ctfhelper.py --help
+
 ```
-cd ctfhelper
+> **Pro Tip:** Keep a local copy of rockyou.txt for efficient hash cracking via the --wordlist flag.
+> 
+## 🏗 Roadmap
+ * [ ] **PCAP Engine:** Automated HTTP object/credential extraction.
+ * [ ] **Audio Stego:** Frequency analysis and LSB tools for WAV/MP3.
+ * [ ] **Web Interface:** Cyber-minimalist dashboard (Flask + Tailwind).
+ * [ ] **Plugin System:** Dynamic loading for third-party modules.
+## 🤝 Contributing
+Contributions are welcome. Please ensure new features are **modular**, **well-tested**, and follow the existing code style. Open an issue first to discuss your implementation plan.
+## ⚖️ License
+Distributed under the **MIT License**. See LICENSE for more information.
+<div align="center">
+<sub>Built by ƤȺIƝ | Powered by logic</sub>
+</div>
 ```
-
-#### 3. Create virtualenv (recommended):
-``` 
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-#### 3. Install requirements:
-```
-pip install -r requirements.txt
-```
-
-### 4. Run:
-```
-python3 ctfhelper.py --help
-```
-
-# Recommended extras
-
-rockyou.txt for hash cracking (place path when using --wordlist)
-
-python-magic can be helpful on some platforms for file type detection
-
-
-# Contributing
-
-Contributions welcome. Want to add a feature? Open an issue describing the feature or submit a PR. Keep it modular: small, tested, and documented.
-
-Roadmap / Stretch goals
-
-PCAP analyzer (HTTP object extraction & credential finder)
-
-> Audio stego tools (WAV/MP3)
-
-> Web UI (Flask + Tailwind) for interactive use
-
-> Plugin system for third-party scripts
-
-
-License
-
-MIT — drop a star if you like it ⭐
-
-#### Author : ƤȺIƝ
-
-*So go and fuck this up*
